@@ -5,7 +5,11 @@ var speed = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalVariables.enemyBulletInstanceCount += 1
+	print("bullet #: ", GlobalVariables.enemyBulletInstanceCount)
 	set_physics_process(true)
+	yield(get_tree().create_timer(3.0), "timeout")
+	GlobalVariables.enemyBulletInstanceCount -= 1
+	queue_free()
 
 func _physics_process(delta):
 	var collidedObject = move_and_collide(Vector2(0, +speed*delta*0.4))
