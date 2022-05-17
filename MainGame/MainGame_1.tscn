@@ -94,7 +94,7 @@ position = Vector2( 642.94, 669.056 )
 position = Vector2( -1.53629, 369.479 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
-position = Vector2( 7.7005, -16.2378 )
+position = Vector2( 8.86685, -16.2378 )
 shape = SubResource( 1 )
 
 [node name="Border_Right" type="Area2D" parent="." groups=[

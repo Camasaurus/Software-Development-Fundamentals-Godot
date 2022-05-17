@@ -8,8 +8,7 @@ func _ready():
 	set_process(true)
 	set_physics_process(true)
 	$Area2D.connect("area_entered", self, "_colliding")
-	#$Area2D.connect("area_exited", self, "_not_colliding")
-
+	$Area2D.connect("area_exited", self, "_not_colliding")
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -29,12 +28,14 @@ func _process(delta):
 			bulletInstance.position = Vector2(position.x, position.y-40)
 			get_tree().get_root().add_child(bulletInstance)
 	if get_tree().get_nodes_in_group("enemy").size() == 0:
-		get_tree().change_scene("res://Win Scene/WinScene.tscn")
+		#get_tree().change_scene("res://Win Scene/WinScene.tscn")
+		#I accidentally disabled the win scene while making level 2
+		pass
 
 func _colliding(area):
 	if area.is_in_group("left"):
-		#print("left")
 		position.x=80
+		#print("left")
 	if area.is_in_group("right"):
 		#print("right")
 		position.x=1210
