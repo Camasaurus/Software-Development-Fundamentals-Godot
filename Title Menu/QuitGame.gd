@@ -5,3 +5,4 @@ func _ready():
 
 func _on_QuitGame_pressed():
 	get_tree().quit()
+# This allows the user to (when the quit game button is pressed) close the game entirely.

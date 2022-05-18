@@ -1,11 +1,10 @@
 # This script runs for each enemy bullet that is spawned.
 # This allows the enemy bullet to collide with the player.
-# This also determines the speed of the bullets.
 
 extends KinematicBody2D
 
 var speed = 500
-
+# This also determines the speed of the bullets.
 
 func _ready():
 	GlobalVariables.enemyBulletInstanceCount += 1
@@ -22,9 +21,13 @@ func _physics_process(delta):
 		#Note: print("Enemy collide: ",collidedObject.collider.name)
 		if "Enemy" in collidedObject.collider.name:
 			pass
-			#collidedObject.get_collider().queue_free() #Don't kill the enemies.
+			#Don't kill the enemies with their own bullets!.
+		elif "Player" in collidedObject.collider.name:
+			print("Hit!")
+			queue_free()
 		else:
 			# Removes the bullets
 			queue_free()
 			GlobalVariables.enemyBulletInstanceCount -= 1
 			print("Enemy Bullets: ", GlobalVariables.enemyBulletInstanceCount)
+			# This puts the bullet count in the output.

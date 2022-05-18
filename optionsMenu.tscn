@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Title Menu/ButtonScript.gd" type="Script" id=1]
 [ext_resource path="res://optionsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/BlackthornsDemoBlack-L2GE.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://RapidFireSelection.gd" type="Script" id=4]
+[ext_resource path="res://Images/options layer.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -25,6 +26,11 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 5 )
 
 [node name="RapidFireSelection" type="CheckButton" parent="."]
 margin_left = 536.934

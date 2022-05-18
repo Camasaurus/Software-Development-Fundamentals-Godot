@@ -1,27 +1,115 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Title Menu/ButtonScript.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/Level 2.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
+[ext_resource path="res://MainGame/MainGame.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 654.998, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 656.545, 12.7759 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.712, 366.767 )
+extents = Vector2( 18.1557, 366.836 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.1557, 366.836 )
+extents = Vector2( 11.712, 366.767 )
 
 [node name="spice_evaders_2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -215.255, -106.218 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+countdownMax = 10
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons VBOX 2" type="VBoxContainer" parent="HUD"]
+margin_right = 146.0
+margin_bottom = 40.0
+
+[node name="GoBackButton" type="Button" parent="HUD/Buttons VBOX 2"]
+margin_right = 146.0
+margin_bottom = 20.0
+hint_tooltip = "Do you want to leave to main menu?"
+text = "Return to Main Menu"
+script = ExtResource( 2 )
+scene_to_load = "res://Title Menu/titleScene.tscn"
+
+[node name="Countdown" type="Label" parent="HUD"]
+margin_left = 150.0
+margin_top = 13.0
+margin_right = 150.0
+margin_bottom = 27.0
+
+[node name="CurrentScoreLabel" type="Label" parent="HUD"]
+margin_left = 154.0
+margin_top = 13.0
+margin_right = 154.0
+margin_bottom = 27.0
+
+[node name="CurrentScore" type="Label" parent="HUD"]
+margin_left = 158.0
+margin_top = 13.0
+margin_right = 158.0
+margin_bottom = 27.0
+
+[node name="HighScore" type="Label" parent="HUD"]
+margin_left = 162.0
+margin_top = 13.0
+margin_right = 162.0
+margin_bottom = 27.0
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 642.52, 669 )
+
+[node name="Border_Bottom" type="Area2D" parent="." groups=[
+"bottom",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Bottom" groups=[
+"top",
+]]
+position = Vector2( 641.467, 726.583 )
+shape = SubResource( 4 )
+
+[node name="Border_Top" type="KinematicBody2D" parent="." groups=[
+"top",
+]]
+position = Vector2( 0, -20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Top" groups=[
+"top",
+]]
+position = Vector2( 637.598, 11.7378 )
+shape = SubResource( 3 )
 
 [node name="Border_Right" type="Area2D" parent="." groups=[
 "right",
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
-position = Vector2( -2.51616, 356.978 )
+position = Vector2( 1280, 360 )
 shape = SubResource( 2 )
 
 [node name="Border_Left" type="Area2D" parent="." groups=[
@@ -29,11 +117,12 @@ shape = SubResource( 2 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
-position = Vector2( 1280, 360 )
+position = Vector2( -2.51616, 356.978 )
 shape = SubResource( 1 )
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 0, -10 )
+script = ExtResource( 5 )
 
 [node name="Enemy19" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 323.964, 276.637 )
@@ -60,25 +149,19 @@ position = Vector2( 868.828, 195.606 )
 position = Vector2( 913.138, 280.04 )
 
 [node name="Enemy14" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1005.26, 189.468 )
+position = Vector2( 1017.85, 237.968 )
 
 [node name="Enemy13" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 235.468, 193.151 )
+position = Vector2( 215.065, 228.32 )
 
 [node name="Enemy12" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1059.28, 328.201 )
+position = Vector2( 1064.98, 324.128 )
 
 [node name="Enemy15" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 95.6053, 237.349 )
-
-[node name="Enemy16" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 72.2783, 139.131 )
+position = Vector2( 112.71, 228.389 )
 
 [node name="Enemy17" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1119.44, 238.577 )
-
-[node name="Enemy18" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1171, 144.042 )
+position = Vector2( 1122.7, 236.948 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 173.034, 325.334 )
@@ -91,3 +174,15 @@ position = Vector2( 367.179, 191.644 )
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 421.193, 107.209 )
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 465.608, 194.546 )
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 763.718, 200.247 )
+
+[node name="Enemy20" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 562.534, 169.296 )
+
+[node name="Enemy21" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 658.647, 173.369 )

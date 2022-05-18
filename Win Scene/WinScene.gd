@@ -14,7 +14,7 @@ func _ready():
 	# Removes the first (and lowest) score.
 	GlobalVariables.scoringInformation["highScores"].remove(0)
 	
-	#Debugging.
+	#Debugging. (???)
 	print(GlobalVariables.scoringInformation["highScores"])
 	saveData()
 
@@ -25,11 +25,11 @@ func saveData():
 		file.store_var(GlobalVariables.scoringInformation)
 		file.close()
 		print("!!Data Saved!!")
+	# If there is an error, your data will be stored, and saved.
 	else :
 		print("!!Data Not Saved!!")
 
-# WHOLE RANT ABOUT TRYING TO GET THE FILE TO DISAPPEAR.
-
+# TESTING INFO ABOUT TRYING TO GET THE FILE TO DISAPPEAR. IGNORE!!
 #func delete_file_with_extension(ext):
 	#var dir = Directory.new()
 	#dir.open("user://save.dat")

@@ -6,7 +6,7 @@
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://Title Menu/ButtonScript.gd" type="Script" id=6]
-[ext_resource path="res://Images/enemy.png" type="Texture" id=7]
+[ext_resource path="res://Images/window moment.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.9622, 388.001 )
@@ -27,10 +27,10 @@ countdownMax = 30
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
-margin_left = -133.25
-margin_top = -79.6187
-margin_right = 1415.75
-margin_bottom = 833.381
+margin_left = -13.0
+margin_top = -34.0
+margin_right = 1306.0
+margin_bottom = 754.0
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {
@@ -51,6 +51,7 @@ margin_bottom = 40.0
 [node name="GoBackButton" type="Button" parent="HUD/Buttons VBOX 2"]
 margin_right = 148.0
 margin_bottom = 20.0
+hint_tooltip = "Do you want to leave to main menu?"
 text = "Return To Main Menu"
 script = ExtResource( 6 )
 __meta__ = {
@@ -63,6 +64,7 @@ margin_left = 152.0
 margin_top = 13.0
 margin_right = 152.0
 margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,18 +74,21 @@ margin_left = 156.0
 margin_top = 13.0
 margin_right = 156.0
 margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="CurrentScore" type="Label" parent="HUD"]
 margin_left = 160.0
 margin_top = 13.0
 margin_right = 160.0
 margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="HighScore" type="Label" parent="HUD"]
 margin_left = 164.0
 margin_top = 13.0
 margin_right = 164.0
 margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 642.94, 669.056 )
