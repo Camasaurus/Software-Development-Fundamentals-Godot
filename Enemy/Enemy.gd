@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 var bullet = preload("res://Bullet-Enemy/Bullet-Enemy.tscn")
 
+# When enemies collide with either the right or left boundaries, they will start moving in the opposite direction.
+# When this happens, this will re-enact the 'Space Invaders' left to right movement pattern of enemies.
+# When enemies collide with borders, they also move down in the game, closer to the player.
 func _colliding(area):
 	if area.is_in_group("right"):
 		get_parent().global_position.y += 10
@@ -10,6 +13,7 @@ func _colliding(area):
 		get_parent().global_position.y += 10
 		get_parent().speed = get_parent().speed * -1
 
+# This number generator
 func _process(delta):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()

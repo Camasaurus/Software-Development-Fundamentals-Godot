@@ -35,19 +35,19 @@ func _process(delta):
 	if get_tree().get_nodes_in_group("enemy").size() == 0:
 		# When all enemies are killed, go to next level (ideally)
 		# Note for later reference: get_tree().change_scene("res://Win Scene/WinScene.tscn")
-		get_tree().change_scene("res://MainGame/MainGame_" + str((int(get_tree().current_scene.name) + 1)) + ".tscn")
+		print(str(get_tree().current_scene.name))
+		get_tree().change_scene("res://MainGame/MainGame_" + str((int(get_tree().current_scene.filename) + 1)) + ".tscn")
 		# (18.05.22) At the moment the change scene above (taken from a youtube vid i found https://youtu.be/c2mkyW_TymY)
 		# Above is trying to bring the user to level number 2 but the number at the moment is not changing from 1.
+		# filename directly looks into the scene name such as level "1" and level "2"
 
+		# When the player goes into the left boundary, the player is sent OUTSIDE of the boundary, unable to pass through.
+		# When the player goes into the right boundary, the player is send OUTSIDE of the boundary, unable to pass through.
 func _colliding(area):
 	if area.is_in_group("left"):
-		#print("left")
 		position.x=80
-		# When the player goes into the left boundary, the player is sent OUTSIDE of the boundary, unable to pass through.
 	if area.is_in_group("right"):
-		#print("right")
 		position.x=1210
-		# When the player goes into the right boundary, the player is send OUTSIDE of the boundary, unable to pass through.
 
 func _not_colliding():
 	pass

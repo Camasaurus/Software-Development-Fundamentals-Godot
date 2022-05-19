@@ -14,6 +14,7 @@ func _ready():
 	GlobalVariables.enemyBulletInstanceCount -= 1
 	queue_free()
 
+			# Queue_free() allows the bullets to disappear when they come in contact with something.
 func _physics_process(delta):
 	var collidedObject = move_and_collide(Vector2(0, +speed*delta*0.4))
 	# When the bullet detects something it collides with.
@@ -26,7 +27,6 @@ func _physics_process(delta):
 			print("Hit!")
 			queue_free()
 		else:
-			# Removes the bullets
 			queue_free()
 			GlobalVariables.enemyBulletInstanceCount -= 1
 			print("Enemy Bullets: ", GlobalVariables.enemyBulletInstanceCount)

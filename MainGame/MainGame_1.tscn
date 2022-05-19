@@ -14,7 +14,7 @@ extents = Vector2( 20.9622, 388.001 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 662.058, 10 )
 
-[node name="spice-evaders" type="Control"]
+[node name="spice-evaders_1" type="Control"]
 margin_left = -0.768188
 margin_top = 1.23187
 margin_right = 1279.23
@@ -51,7 +51,7 @@ margin_bottom = 40.0
 [node name="GoBackButton" type="Button" parent="HUD/Buttons VBOX 2"]
 margin_right = 148.0
 margin_bottom = 20.0
-hint_tooltip = "Do you want to leave to main menu?"
+hint_tooltip = "Reset your progress so far?"
 text = "Return To Main Menu"
 script = ExtResource( 6 )
 __meta__ = {

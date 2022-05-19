@@ -1,12 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Button.gd" type="Script" id=1]
 [ext_resource path="res://Title Menu/titleFontStyle.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/BlackthornsDemoBlack-L2GE.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Score.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/000 InsomniacOvrLrd Comic Dialogue.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 110
 outline_size = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
 font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
@@ -39,6 +49,28 @@ custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 4
 custom_constants/shadow_as_outline = 1
 text = "You Lose..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 703.638
+margin_top = 400.779
+margin_right = 740.638
+margin_bottom = 456.779
+custom_fonts/font = SubResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinalScoreLabel" type="Label" parent="."]
+margin_left = 445.544
+margin_top = 412.887
+margin_right = 662.544
+margin_bottom = 443.887
+custom_fonts/font = SubResource( 3 )
+text = "Your score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

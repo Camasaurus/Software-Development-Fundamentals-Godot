@@ -18,6 +18,8 @@ func _ready():
 	print(GlobalVariables.scoringInformation["highScores"])
 	saveData()
 
+	# This function labelled 'saveData' allows the user to create new data.
+	# If there is an error, your data will be stored, and saved.
 func saveData():
 	var file = File.new()
 	var error = file.open(GlobalVariables.saveFile, file.WRITE)
@@ -25,7 +27,6 @@ func saveData():
 		file.store_var(GlobalVariables.scoringInformation)
 		file.close()
 		print("!!Data Saved!!")
-	# If there is an error, your data will be stored, and saved.
 	else :
 		print("!!Data Not Saved!!")
 

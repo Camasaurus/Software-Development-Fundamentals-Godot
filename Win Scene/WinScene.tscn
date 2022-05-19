@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/Organic Relief.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Win Scene/WinButton.gd" type="Script" id=2]
 [ext_resource path="res://Win Scene/WinScene.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/BlackthornsDemoBlack-L2GE.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Score.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -48,5 +49,15 @@ text = "You Win!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "Please leave room between the You Win! and the Replay button so that you can implement a system where the player sees their high score."
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 599.997
+margin_top = 366.998
+margin_right = 639.997
+margin_bottom = 380.998
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 [connection signal="pressed" from="WinButton" to="WinButton" method="_on_WinButton_pressed"]

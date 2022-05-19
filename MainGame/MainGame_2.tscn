@@ -7,19 +7,19 @@
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 654.998, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 656.545, 12.7759 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 18.1557, 366.836 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 11.712, 366.767 )
 
-[node name="spice_evaders_2" type="Control"]
+[node name="spice-evaders_2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -215.255, -106.218 )
@@ -27,7 +27,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-countdownMax = 10
+countdownMax = 30
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -51,7 +51,7 @@ margin_bottom = 40.0
 [node name="GoBackButton" type="Button" parent="HUD/Buttons VBOX 2"]
 margin_right = 146.0
 margin_bottom = 20.0
-hint_tooltip = "Do you want to leave to main menu?"
+hint_tooltip = "Reset your progress so far?"
 text = "Return to Main Menu"
 script = ExtResource( 2 )
 scene_to_load = "res://Title Menu/titleScene.tscn"
@@ -91,7 +91,7 @@ position = Vector2( 642.52, 669 )
 "top",
 ]]
 position = Vector2( 641.467, 726.583 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Border_Top" type="KinematicBody2D" parent="." groups=[
 "top",
@@ -102,7 +102,7 @@ position = Vector2( 0, -20 )
 "top",
 ]]
 position = Vector2( 637.598, 11.7378 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Border_Right" type="Area2D" parent="." groups=[
 "right",
@@ -110,7 +110,7 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
 position = Vector2( 1280, 360 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Border_Left" type="Area2D" parent="." groups=[
 "left",
@@ -118,7 +118,7 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
 position = Vector2( -2.51616, 356.978 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 0, -10 )
