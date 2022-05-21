@@ -3,7 +3,7 @@
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Title Menu/ButtonScript.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Images/Level 2.png" type="Texture" id=4]
+[ext_resource path="res://Images/Level 4.png" type="Texture" id=4]
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=6]
 [ext_resource path="res://Enemy/Enemy-Two.tscn" type="PackedScene" id=7]
@@ -20,7 +20,7 @@ extents = Vector2( 18.1557, 366.836 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 11.712, 366.767 )
 
-[node name="spice-evaders_2" type="Control"]
+[node name="spice_evaders_4" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -215.255, -106.218 )
@@ -52,7 +52,7 @@ margin_bottom = 40.0
 [node name="GoBackButton" type="Button" parent="HUD/Buttons VBOX 2"]
 margin_right = 146.0
 margin_bottom = 20.0
-hint_tooltip = "Reset your progress so far?"
+hint_tooltip = "Do you want to leave to main menu?"
 text = "Return to Main Menu"
 script = ExtResource( 2 )
 scene_to_load = "res://Title Menu/titleScene.tscn"
@@ -122,68 +122,94 @@ position = Vector2( -2.51616, 356.978 )
 shape = SubResource( 4 )
 
 [node name="Enemies" type="Node2D" parent="."]
-position = Vector2( 0, -10 )
 script = ExtResource( 5 )
 
-[node name="Enemy19" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 323.964, 276.637 )
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 330.071, 177.695 )
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 273.063, 366.604 )
-
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 515.64, 75.7538 )
-
-[node name="Enemy6" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 616.183, 73.0706 )
-
-[node name="Enemy7" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 714.939, 77.1657 )
-
-[node name="Enemy8" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 811.771, 113.348 )
-
-[node name="Enemy9" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 868.828, 195.606 )
-
-[node name="Enemy10" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 913.138, 280.04 )
-
-[node name="Enemy14" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1017.85, 237.968 )
-
-[node name="Enemy13" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 215.065, 228.32 )
-
-[node name="Enemy15" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 112.71, 228.389 )
-
-[node name="Enemy17" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 1122.7, 236.948 )
-
-[node name="Enemy11" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 962.815, 365.475 )
+[node name="Enemy21" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 1092.97, 368.108 )
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 367.179, 191.644 )
+position = Vector2( 1037.71, 277.151 )
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 421.193, 107.209 )
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 401.576, 91.2718 )
 
-[node name="Enemy16" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 465.608, 194.546 )
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 439.043, 180.053 )
 
-[node name="Enemy18" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 763.718, 200.247 )
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 475.696, 271.278 )
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 562.917, 174.789 )
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 720.049, 273.722 )
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 661.188, 176.336 )
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 505.018, 91.2719 )
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 641.856, 363.318 )
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 546.558, 182.497 )
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 593.8, 273.722 )
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 620.679, 96.1589 )
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 754.258, 361.689 )
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 408.906, 362.503 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 528.639, 362.503 )
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 662.219, 185.755 )
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 872.362, 363.318 )
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 721.678, 95.3444 )
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 771.363, 184.94 )
 
 [node name="Enemy20" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 172.156, 325.676 )
+position = Vector2( 830.822, 272.907 )
 
-[node name="Enemy21" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 1058.91, 330.319 )
+[node name="Enemy" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 935.458, 273.722 )
+
+[node name="Enemy22" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 982.7, 364.132 )
+
+[node name="Enemy23" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 884.959, 188.198 )
+
+[node name="Enemy24" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 829.572, 93.7153 )
+
+[node name="Enemy25" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 930.885, 100.95 )
+
+[node name="Enemy26" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 266.246, 273.625 )
+
+[node name="Enemy27" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 983.014, 189.731 )
+
+[node name="Enemy28" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 299.641, 365.665 )
+
+[node name="Enemy29" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 369.689, 273.625 )
+
+[node name="Enemy30" parent="Enemies" instance=ExtResource( 1 )]
+position = Vector2( 200.271, 364.036 )

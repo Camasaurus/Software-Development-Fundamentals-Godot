@@ -25,6 +25,7 @@ func _physics_process(delta):
 			#Don't kill the enemies with their own bullets!.
 		elif "Player" in collidedObject.collider.name:
 			print("Hit!")
+			
 			queue_free()
 		else:
 			queue_free()

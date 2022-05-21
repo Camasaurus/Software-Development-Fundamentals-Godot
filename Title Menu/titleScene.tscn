@@ -143,7 +143,7 @@ margin_bottom = 720.0
 margin_right = 597.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
-text = "0.1"
+text = "0.29999999"
 
 [node name="Developer" type="Label" parent="Layout/App Info"]
 margin_left = 601.0

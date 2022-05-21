@@ -35,6 +35,7 @@ func _process(delta):
 	if get_tree().get_nodes_in_group("enemy").size() == 0:
 		# When all enemies are killed, go to next level (ideally)
 		# Note for later reference: get_tree().change_scene("res://Win Scene/WinScene.tscn")
+		# (21.05.22) I have reorganised the WinScene name to MainGame 6 so it actually works.
 		print(str(get_tree().current_scene.name))
 		get_tree().change_scene("res://MainGame/MainGame_" + str((int(get_tree().current_scene.filename) + 1)) + ".tscn")
 		# (18.05.22) At the moment the change scene above (taken from a youtube vid i found https://youtu.be/c2mkyW_TymY)
@@ -52,3 +53,36 @@ func _colliding(area):
 func _not_colliding():
 	pass
 	# When the player is not in a boundary, you don't need to worry about it.
+
+# Below is a collection of health mechanics taken from "Game Endeavour" 
+#(https://www.youtube.com/watch?v=Cx_i4Uei_ME)
+export (float) var max_health = 100
+
+onready var health = max_health setget _set_health
+onready var invulnerability_timer = $InvulnerabilityTimer
+onready var effects_animation = $EffectsAnimation
+
+signal health_updated(health)
+signal killed()
+
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			kill()
+			emit_signal("killed")
+
+func kill():
+	get_tree().change_scene("res://EndScene.tscn")
+
+func damage(amount):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		_set_health(health - amount)
+		effects_animation.play("damage")
+		effects_animation.queue("flash")
+	
+func _on_InvulnerabilityTimer_timeout():
+	effects_animation.stop()

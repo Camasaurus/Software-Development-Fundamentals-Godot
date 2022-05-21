@@ -23,7 +23,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-countdownMax = 30
+countdownMax = 60
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -119,7 +119,7 @@ position = Vector2( 646.934, -31.955 )
 [node name="TopCollider" type="CollisionShape2D" parent="Border_Top" groups=[
 "top",
 ]]
-position = Vector2( 0, 1 )
+position = Vector2( -1.16632, 5.66545 )
 shape = SubResource( 2 )
 
 [node name="Border_Bottom" type="Area2D" parent="." groups=[

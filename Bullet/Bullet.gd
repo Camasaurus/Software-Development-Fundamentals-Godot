@@ -16,4 +16,6 @@ func _physics_process(delta):
 			collidedObject.get_collider().queue_free()
 			GlobalVariables.scoringInformation["currentScore"] +=10
 		queue_free()
+		if "Border_Top" in collidedObject.collider.name:
+			queue_free()
 

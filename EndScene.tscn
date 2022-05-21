@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Button.gd" type="Script" id=1]
 [ext_resource path="res://Title Menu/titleFontStyle.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/BlackthornsDemoBlack-L2GE.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Score.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/000 InsomniacOvrLrd Comic Dialogue.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Images/YouLosePicture.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 110
@@ -19,7 +20,21 @@ font_data = ExtResource( 5 )
 size = 30
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 25
+outline_size = 2
+outline_color = Color( 0.490196, 0.184314, 0.184314, 1 )
+font_data = ExtResource( 3 )
+
 [node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 468.364
@@ -37,9 +52,9 @@ __meta__ = {
 
 [node name="YouLoseLabel" type="Label" parent="."]
 margin_left = 268.957
-margin_top = 254.177
+margin_top = 245.177
 margin_right = 995.957
-margin_bottom = 365.177
+margin_bottom = 356.177
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.501961, 0.207843, 0.207843, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -54,10 +69,10 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="."]
-margin_left = 703.638
-margin_top = 400.779
-margin_right = 740.638
-margin_bottom = 456.779
+margin_left = 689.671
+margin_top = 355.387
+margin_right = 726.671
+margin_bottom = 411.387
 custom_fonts/font = SubResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -65,12 +80,24 @@ __meta__ = {
 }
 
 [node name="FinalScoreLabel" type="Label" parent="."]
-margin_left = 445.544
-margin_top = 412.887
-margin_right = 662.544
-margin_bottom = 443.887
+margin_left = 442.052
+margin_top = 368.892
+margin_right = 659.052
+margin_bottom = 399.892
 custom_fonts/font = SubResource( 3 )
 text = "Your score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndText" type="Label" parent="."]
+margin_left = 304.476
+margin_top = 425.289
+margin_right = 922.476
+margin_bottom = 451.289
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.760784, 0.282353, 0.282353, 1 )
+text = "The spices have overtaken your kitchen!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
