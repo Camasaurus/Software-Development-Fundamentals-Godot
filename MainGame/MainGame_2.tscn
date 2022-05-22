@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Title Menu/ButtonScript.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Enemy/Enemies.gd" type="Script" id=5]
 [ext_resource path="res://MainGame/MainGame.gd" type="Script" id=6]
 [ext_resource path="res://Enemy/Enemy-Two.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/backgroundMusic.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 654.998, 10 )
@@ -187,3 +188,7 @@ position = Vector2( 172.156, 325.676 )
 
 [node name="Enemy21" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1058.91, 330.319 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
