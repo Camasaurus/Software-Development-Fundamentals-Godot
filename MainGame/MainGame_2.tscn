@@ -172,16 +172,16 @@ position = Vector2( 367.179, 191.644 )
 position = Vector2( 421.193, 107.209 )
 
 [node name="Enemy16" parent="Enemies" instance=ExtResource( 1 )]
-position = Vector2( 465.608, 194.546 )
+position = Vector2( 464.442, 194.546 )
 
 [node name="Enemy18" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 763.718, 200.247 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 562.917, 174.789 )
+position = Vector2( 561.751, 168.957 )
 
 [node name="Enemy12" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 661.188, 176.336 )
+position = Vector2( 660.022, 169.338 )
 
 [node name="Enemy20" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 172.156, 325.676 )
